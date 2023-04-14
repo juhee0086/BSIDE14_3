@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--suppress ALL -->
+<mapper namespace="com.bside.BSIDE14_3.user.mapper.SignUpMapper">
+
+    <insert id="createMember" parameterType="com.bside.BSIDE14_3.user.domain.UserDto">
+        INSERT INTO
+            bside.cust(
+            eml,
+            usr_nm,
+            password,
+            gndr_cls_cd,
+            brdt,
+            join_dtm
+        )
+        VALUES(
+                  #{eml},
+                  #{usrNm},
+                  #{password},
+                  #{gndrClsCd},
+                  #{brdt},
+                  now()
+              )
+    </insert>
+
+    <select id="duplicateCheck" parameterType="string" resultType="int">
+        SELECT
+            COUNT(eml)
+        FROM
+            bside.cust
+        WHERE eml = #{eml}
+    </select>
+
+
+</mapper>
