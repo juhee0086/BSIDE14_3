@@ -12,7 +12,7 @@ JWT
 etc...
 ```
 
-### Page, Component 제목 주석 예시
+### Controller, Service 주석 예시
 ```
 /**
  * @desc 로그인 기능
