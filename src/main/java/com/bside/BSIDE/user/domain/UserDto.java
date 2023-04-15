@@ -12,10 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UserDto {
-	@Schema(description = "사용자 ID", example = "2")
-    private int id;
-	
+public class UserDto {	
 	@Schema(description = "사용자 이름", example = "Lee")
     private String username;
 	

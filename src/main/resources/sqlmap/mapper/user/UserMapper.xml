@@ -7,14 +7,12 @@
 <mapper namespace="com.bside.BSIDE.user.persistence.UserMapper">
 	<insert id="insertUser" parameterType="com.bside.BSIDE.user.domain.UserDto">
 		INSERT INTO
-			user.info(
-			id,
+			.info(
 			username,
 			password,
 			email
 		)
 		VALUES(
-				  #{id},
 				  #{username},
 				  #{password},
 				  #{email}
@@ -22,6 +20,6 @@
 	</insert>
 	
 	<select id="getAllUsers" resultType="com.bside.BSIDE.user.domain.UserDto">
-		SELECT * FROM user.info
+		SELECT * FROM bside.cust
 	</select>
 </mapper>

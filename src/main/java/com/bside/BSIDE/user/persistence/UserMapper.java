@@ -11,7 +11,7 @@ import com.bside.BSIDE.user.domain.UserDto;
 @Mapper
 public interface UserMapper {
 
-    @Insert("INSERT INTO user(id, username, password, email) VALUES(#{id}, #{username}, #{password}, #{email})")
+	// @Insert("INSERT INTO user(username, password, email) VALUES(#{username}, #{password}, #{email})")
     void insertUser(UserDto userDto);
     List<UserDto> getAllUsers();
 }
