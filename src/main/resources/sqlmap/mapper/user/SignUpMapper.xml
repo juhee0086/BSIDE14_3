@@ -6,9 +6,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--suppress ALL -->
-<mapper namespace="com.bside.BSIDE14_3.user.mapper.SignUpMapper">
+<mapper namespace="com.bside.BSIDE.user.persistence.SignUpMapper">
 
-    <insert id="createMember" parameterType="com.bside.BSIDE14_3.user.domain.UserDto">
+    <insert id="createMember" parameterType="com.bside.BSIDE.user.domain.UserDto">
         INSERT INTO
             bside.cust(
             eml,
