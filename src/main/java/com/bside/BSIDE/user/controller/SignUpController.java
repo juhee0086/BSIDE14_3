@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -57,7 +58,16 @@ public class SignUpController {
         signUpService.createMember(userDto);
         String result = "회원가입이 완료되었습니다.";
         return new ResponseEntity<>(result, headers, HttpStatus.OK);
-
     }
+
+    @Operation(summary = "회원조회", description = "String eml")
+    @PostMapping("/inquiry-member")
+    public ResponseEntity<?> inquiryMember(@RequestBody String eml) throws Exception {
+        log.debug("eml: {}", eml);
+        Map<String, Object> result = signUpService.selectMember(eml);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+
 
 }

@@ -36,5 +36,14 @@
         WHERE eml = #{eml}
     </select>
 
+    <select id="selectMember" parameterType="string" resultType="Map">
+        SELECT
+            *
+        FFROM
+            bside.cust
+        WHERE eml = #{eml}
+    </select>
+
+
 
 </mapper>

@@ -5,6 +5,8 @@ import com.bside.BSIDE.user.persistence.SignUpMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @RequiredArgsConstructor
 @Service("SignUpServiceImpl")
 public class SignUpServiceImpl implements SignUpService{
@@ -27,5 +29,11 @@ public class SignUpServiceImpl implements SignUpService{
         userDto.setPassword(userDto.getPassword());
         // 회원가입
         signUpMapper.createMember(userDto);
+    }
+
+    @Override
+    public Map<String, Object> selectMember(String eml) throws Exception {
+        Map<String, Object> reslt = signUpMapper.selectMember(eml);
+        return reslt;
     }
 }
